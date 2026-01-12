@@ -1,0 +1,5 @@
+{
+  "name": "RoboJump: 8-Bit Adventure",
+  "description": "A mobile-optimized 2D platformer starring a cute 8-bit robot. Navigate through platforms, collect data-coins, and avoid glitches!",
+  "requestFramePermissions": []
+}
