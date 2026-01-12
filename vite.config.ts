@@ -10,7 +10,18 @@ export default defineConfig(({ mode }) => {
         host: '0.0.0.0',
       },
       plugins: [react()],
-         base: './', // <--- ДОБАВЬТЕ ЭТУ СТРОЧКУ ОБЯЗАТЕЛЬНО
+      base: './', 
+      
+      // --- НАЧАЛО ВАЖНОГО ИЗМЕНЕНИЯ ---
+      build: {
+        target: 'es2020', // Это ключевая настройка для работы на телефонах
+        outDir: 'dist',
+        assetsDir: 'assets',
+        // Уменьшает размер кода, чтобы быстрее грузилось
+        minify: 'esbuild', 
+      },
+      // --- КОНЕЦ ВАЖНОГО ИЗМЕНЕНИЯ ---
+
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
         'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
